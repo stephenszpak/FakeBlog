@@ -8,7 +8,6 @@ namespace FakeBlog.Models
     {
         [Key]
         public int PublishedWorkId { get; set; }
-        public int DraftId { get; set; }
 
         [Required] //means data cannot be NULL
         [MinLength(3)]
