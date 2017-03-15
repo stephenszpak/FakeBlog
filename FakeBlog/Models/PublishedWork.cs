@@ -18,5 +18,7 @@ namespace FakeBlog.Models
         public DateTime PublishedAt { get; set; }
         public bool IsDraft { get; set; }
         public bool IsEdited { get; set; }
+        public ApplicationUser Owner { get; set; }
+        public Author Author { get; internal set; }
     }
 }
