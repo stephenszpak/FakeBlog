@@ -15,8 +15,8 @@ namespace FakeBlog.DAL
 
 
         //read
-        List<PublishedWork> GetAllPublishedWork(int PublishedWorkId);
-        List<PublishedWork> GetAuthorsPublishedWork(string userId);
+        PublishedWork GetPublishedWork(int PublishedWorkId);
+        List<PublishedWork> GetAuthorsPublishedWork(string AuthorId);
 
         //update
         bool IsADraft(int PublishedWorkId);
@@ -25,8 +25,6 @@ namespace FakeBlog.DAL
         //delete
         bool RemovePublishedWork(int PublishedWorkId);
         bool RemoveAuthor(int AuthorId);
-
-
-
     }
 }
+ 

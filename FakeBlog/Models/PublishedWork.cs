@@ -19,6 +19,7 @@ namespace FakeBlog.Models
         public bool IsDraft { get; set; }
         public bool IsEdited { get; set; }
         public ApplicationUser Owner { get; set; }
-        public Author Author { get; internal set; }
+        public Author Author { get; set; }
+        public int AuthorId { get; set; }
     }
 }

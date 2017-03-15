@@ -26,16 +26,11 @@ namespace FakeBlog.DAL
             throw new NotImplementedException();
         }
 
-        
 
-        public List<PublishedWork> GetAllPublishedWork(int PublishedWorkId)
+        public PublishedWork GetPublishedWork(int PublishedWorkId)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<PublishedWork> GetAuthorsPublishedWork(string userId)
-        {
-            throw new NotImplementedException();
+            PublishedWork found_work = Context.PublishedWorks.FirstOrDefault(b => b.PublishedWorkId == PublishedWorkId);
+            return found_work;
         }
 
         public bool IsADraft(int PublishedWorkId)
@@ -55,7 +50,15 @@ namespace FakeBlog.DAL
 
         public bool RemovePublishedWork(int PublishedWorkId)
         {
-            throw new NotImplementedException();
+            PublishedWork found_work = GetPublishedWork(PublishedWorkId);
+
+            if (found_work != null)
+            {
+                Context.PublishedWorks.Remove(found_work);
+                Context.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public void AddWork(string name, Author owner)
@@ -64,6 +67,11 @@ namespace FakeBlog.DAL
 
             Context.PublishedWorks.Add(newWork);
             Context.SaveChanges();
+        }
+
+        public List<PublishedWork> GetAuthorsPublishedWork(string AuthorId)
+        {
+            return Context.PublishedWorks.Where(b => b.Owner.Id == AuthorId).ToList();
         }
     }
 }
