@@ -8,9 +8,8 @@ namespace FakeBlog.DAL
 {
     public class FakeBlogRepository : IRepository
     {
-        private FakeBlogContext context;
-
         public FakeBlogContext Context { get; set; }
+        
         public FakeBlogRepository()
         {
             Context = new FakeBlogContext();
@@ -26,7 +25,6 @@ namespace FakeBlog.DAL
             throw new NotImplementedException();
         }
 
-
         public PublishedWork GetPublishedWork(int PublishedWorkId)
         {
             PublishedWork found_work = Context.PublishedWorks.FirstOrDefault(b => b.PublishedWorkId == PublishedWorkId);
@@ -39,11 +37,6 @@ namespace FakeBlog.DAL
         }
 
         public bool IsEdited(int PublishedWorkId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool RemoveAuthor(int AuthorId)
         {
             throw new NotImplementedException();
         }

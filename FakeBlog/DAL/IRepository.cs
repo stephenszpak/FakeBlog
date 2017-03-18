@@ -13,7 +13,6 @@ namespace FakeBlog.DAL
         void AddAuthor(string name, ApplicationUser Owner);
         void AddWork(string name, Author owner);
 
-
         //read
         PublishedWork GetPublishedWork(int PublishedWorkId);
         List<PublishedWork> GetAuthorsPublishedWork(string AuthorId);
@@ -24,7 +23,6 @@ namespace FakeBlog.DAL
 
         //delete
         bool RemovePublishedWork(int PublishedWorkId);
-        bool RemoveAuthor(int AuthorId);
     }
 }
  

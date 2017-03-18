@@ -47,8 +47,6 @@ namespace FakeBlog.Tests.FakeRepoTests
             fake_context.Setup(c => c.PublishedWorks).Returns(mock_work_set.Object);
         }
 
-
-
         [TestMethod]
         public void EnsureICanCreateInstance()
         {
